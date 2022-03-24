@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello ProductController!
+{% endblock %}
+{% block body %}
+			<div class="container">
+	<h1>Liste des catégories</h1>
+	<table class="table table-light table-striped">
+		<tr>
+			<th>Id catégorie</th>
+			<th>Catégorie</th>
+			<th>Action</th>
+		</tr>
+		{% for category in categories %}
+				<td>
+					{{category.Id}}
+				</td>
+				<td>
+					{{category.name}}
+				</td>
+				
+				<td>
+					<a class="btn btn-warning" href="{{ path('cat-edit',{'id':category.id}) }}">modifier</a>
+					<a class="btn btn-danger" href="{{ path('cat-delete',{'id':category.id}) }}">supprimer</a>
+				</td>
+			</tr>
+		</div>
+		<br>
+	{% endfor %}
+</table>
+<a class="btn btn-primary" href="{{ path('cat-new') }}">Création d'une nouvelle catégorie</a>{% endblock %}

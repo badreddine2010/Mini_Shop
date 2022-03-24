@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Blog : page detail-catégorie
+{% endblock %}
+
+{% block body %}
+	<h1>Détail Catégorie
+	</h1>
+	<div class="container">
+		<h3>{{category.name}}</h3>
+		<a href="{{path('cat-edit',{'id':category.id})}}" class="btn btn-success">Modifier la catégorie</a>
+		<a href="{{path('cat-delete',{'id':category.id})}}" class="btn btn-danger">Supprimer la catégorie</a>
+	</div>
+{% endblock %}

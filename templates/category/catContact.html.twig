@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Hello BlogController!
+{% endblock %}
+
+{% block body %}
+	<h1>
+		Bienvenue sur ma liste de catégories
+	</h1>
+	{% for cat in categories %}
+		<div class="container">
+			<h3>{{ cat.name }}</h3>
+			<a class="btn btn-primary" href="{{path('cat-detail',{'id':cat.id})}}">Détails</a>
+		</div>
+		<br>
+	{% endfor %}
+{% endblock %}
